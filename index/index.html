@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hasil Pencarian Personel</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -16,7 +16,7 @@
       color: #333;
     }
     .header-bar {
-      background-color: #0a1c4e;
+      background-color: #15406A;
       color: white;
       padding: 15px 20px;
       display: flex;
@@ -28,21 +28,35 @@
     .header-bar img {
       height: 50px;
     }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin-left: auto;
+    }
+
     .nav-menu {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
       margin-top: 10px;
     }
+
     .nav-menu a {
       color: white;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s;
     }
+
     .nav-menu a:hover {
       color: #ffd700;
     }
+
     .main-container {
       width: 95%;
       max-width: 1200px;
@@ -52,15 +66,18 @@
       border-radius: 12px;
       padding: 30px;
     }
+
     .main-container h2 {
       text-align: center;
       font-size: 26px;
       margin-bottom: 25px;
       color: #0a1c4e;
     }
+
     .table-responsive {
       overflow-x: auto;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -69,22 +86,30 @@
       border-radius: 8px;
       overflow: hidden;
     }
+
     th, td {
       padding: 12px 10px;
       text-align: center;
       border: 1px solid #ddd;
     }
+
     th {
       background-color: #f4f6fa;
       font-weight: 600;
       color: #0a1c4e;
     }
+
     tr:nth-child(even) {
       background-color: #f9f9f9;
     }
+
+    .kembali-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
     .btn-kembali {
       display: inline-block;
-      margin: 30px auto 0;
       background: #0a1c4e;
       color: white;
       padding: 12px 30px;
@@ -92,14 +117,17 @@
       font-weight: 600;
       font-size: 15px;
       border: none;
+      text-decoration: none;
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .btn-kembali:hover {
       background: #09203f;
     }
+
     .footer {
-      background-color: #0a1c4e;
+      background-color: #15406A;
       color: white;
       text-align: center;
       padding: 25px;
@@ -107,23 +135,31 @@
       margin-top: 60px;
       border-top: 5px solid #ffd700;
     }
+
     .footer img {
       height: 40px;
       margin: 10px;
       vertical-align: middle;
     }
+
     @media (max-width: 768px) {
-      .header-bar {
-        flex-direction: column;
-        align-items: flex-start;
+      .menu-toggle {
+        display: block;
       }
       .nav-menu {
+        display: none;
         flex-direction: column;
         width: 100%;
         margin-top: 10px;
+        background-color: #15406A;
+        padding: 10px 0;
       }
-      table {
-        font-size: 12px;
+      .nav-menu a {
+        padding: 10px 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav-menu.show {
+        display: flex;
       }
     }
   </style>
@@ -131,14 +167,15 @@
 <body>
 
   <div class="header-bar">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Logo_Kementerian_Ketenagakerjaan_Republik_Indonesia_%282020%29.svg/512px-Logo_Kementerian_Ketenagakerjaan_Republik_Indonesia_%282020%29.svg.png" alt="Logo Kemnaker">
-    <div class="nav-menu">
-      <a href="#">BERANDA</a>
-      <a href="#">FLOW CHART</a>
-      <a href="#">LAYANAN</a>
-      <a href="#">INFO & ARTIKEL</a>
-      <a href="#">DOKUMEN K3</a>
-      <a href="#">HUBUNGI KAMI</a>
+    <img src="logo (2).png" alt="Logo Kemnaker">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="nav-menu" id="navMenu">
+      <a href="https://temank3.kemnaker.go.id/" target="_blank">BERANDA</a>
+      <a href="https://temank3.kemnaker.go.id/page/flowchart" target="_blank">FLOW CHART</a>
+      <a href="https://temank3.kemnaker.go.id/portal" target="_blank">LAYANAN</a>
+      <a href="https://temank3.kemnaker.go.id/page/news" target="_blank">INFO & ARTIKEL</a>
+      <a href="https://temank3.kemnaker.go.id/page/perundangan" target="_blank">DOKUMEN K3</a>
+      <a href="https://temank3.kemnaker.go.id/page/kontak" target="_blank">HUBUNGI KAMI</a>
     </div>
   </div>
 
@@ -212,17 +249,25 @@
         </tbody>
       </table>
     </div>
-    <button class="btn-kembali">Kembali</button>
+
+    <div class="kembali-container">
+      <a href="https://temank3.kemnaker.go.id/" class="btn-kembali">Kembali</a>
+    </div>
   </div>
 
   <div class="footer">
-    <p>Jl. Jenderal Gatot Subroto Kav. 51, Daerah Khusus Ibukota Jakarta 12750, Indonesia.</p>
-    <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Logo_Kementerian_Ketenagakerjaan_Republik_Indonesia_%282020%29.svg/512px-Logo_Kementerian_Ketenagakerjaan_Republik_Indonesia_%282020%29.svg.png" alt="K3">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/G20_Indonesia_2022_logo.svg" alt="G20">
-    </div>
-    <p>Copyright © 2020-2025 Ditjen Binwasnaker & K3, Kemnaker RI.</p>
+  <div>
+    <img src="logofooter1.png" alt="Logo Footer" style="height: 60px;">
+    <p style="margin-top: 10px;">Jl. Jenderal Gatot Subroto Kav. 51, Daerah Khusus Ibukota Jakarta 12750, Indonesia.</p>
   </div>
+  <p>Copyright © 2020-2025 Ditjen Binwasnaker & K3, Kemnaker RI.</p>
+</div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
