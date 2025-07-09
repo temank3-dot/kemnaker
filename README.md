@@ -134,11 +134,11 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Logo_Kementerian_Ketenagakerjaan_Republik_Indonesia_%282020%29.svg/512px-Logo_Kementerian_Ketenagakerjaan_Republik_Indonesia_%282020%29.svg.png" alt="Logo Kemnaker">
     <div class="nav-menu">
       <a href="#">BERANDA</a>
-      <a href="#">FLOW CHART</a>
+      <a href="https://temank3.kemnaker.go.id/page/flowchart" target="_blank">FLOW CHART</a>
       <a href="#">LAYANAN</a>
       <a href="#">INFO & ARTIKEL</a>
       <a href="#">DOKUMEN K3</a>
-      <a href="#">HUBUNGI KAMI</a>
+      <a href="https://temank3.kemnaker.go.id/page/kontak" target="_blank">HUBUNGI KAMI</a>
     </div>
   </div>
 
@@ -226,3 +226,4 @@
 
 </body>
 </html>
+
