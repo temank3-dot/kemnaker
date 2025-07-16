@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hasil Pencarian Personel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom right, #e9eff5, #ffffff);
+      color: #333;
+    }
+    .header-bar {
+      background-color: #15406A;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .header-bar img {
+      height: 50px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin-left: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-menu a:hover {
+      color: #ffd700;
+    }
+
+    .main-container {
+      width: 95%;
+      max-width: 1200px;
+      background: white;
+      margin: 40px auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .main-container h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #0a1c4e;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+      font-size: 14px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f4f6fa;
+      font-weight: 600;
+      color: #0a1c4e;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .kembali-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn-kembali {
+      display: inline-block;
+      background: #0a1c4e;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-kembali:hover {
+      background: #09203f;
+    }
+
+    .footer {
+      background-color: #15406A;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+      margin-top: 60px;
+      border-top: 5px solid #ffd700;
+    }
+
+    .footer img {
+      height: 40px;
+      margin: 10px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        background-color: #15406A;
+        padding: 10px 0;
+      }
+      .nav-menu a {
+        padding: 10px 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav-menu.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    <img src="logo (2).png" alt="Logo Kemnaker">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="nav-menu" id="navMenu">
+      <a href="https://temank3.kemnaker.go.id/" target="_blank">BERANDA</a>
+      <a href="https://temank3.kemnaker.go.id/page/flowchart" target="_blank">FLOW CHART</a>
+      <a href="https://temank3.kemnaker.go.id/portal" target="_blank">LAYANAN</a>
+      <a href="https://temank3.kemnaker.go.id/page/news" target="_blank">INFO & ARTIKEL</a>
+      <a href="https://temank3.kemnaker.go.id/page/perundangan" target="_blank">DOKUMEN K3</a>
+      <a href="https://temank3.kemnaker.go.id/page/kontak" target="_blank">HUBUNGI KAMI</a>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <h2>Hasil Pencarian Personel</h2>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Tempat & Tanggal Lahir</th>
+            <th>Nama Instansi</th>
+            <th>Jenis Personil</th>
+            <th>Jenis Alat</th>
+            <th>Klasifikasi</th>
+            <th>Kelas</th>
+            <th>No. Registrasi</th>
+            <th>Masa Berlaku</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>ACO SIPA</td>
+            <td>Palla-Pallang, 10 Maret 2004</td>
+            <td>PT. SLV METROPOLITAN INDONESIA</td>
+            <td>Trainer</td>
+            <td>-</td>
+            <td>TRAINER JURU LAS SMAW + GTAW</td>
+            <td>1</td>
+            <td>2937/JL/AS/PNK/II/2024</td>
+            <td>08 Januari 2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="kembali-container">
+      <a href="https://temank3.kemnaker.go.id/" class="btn-kembali">Kembali</a>
+    </div>
+  </div>
+
+  <div class="footer">
+  <div>
+    <img src="logofooter1.png" alt="Logo Footer" style="height: 60px;">
+    <p style="margin-top: 10px;">Jl. Jenderal Gatot Subroto Kav. 51, Daerah Khusus Ibukota Jakarta 12750, Indonesia.</p>
+  </div>
+  <p>Copyright © 2020-2025 Ditjen Binwasnaker & K3, Kemnaker RI.</p>
+</div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
